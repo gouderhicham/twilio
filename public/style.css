@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+body{
+  background: rgb(37, 37, 37);
+  color: white;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  flex-direction: column;
+  overflow-y : hidden ; 
+  height: 100vh;
+  width: 100vw;
+}
+*{
+  font-family: 'Nunito Sans', sans-serif;
+  padding : 0px ; 
+  margin: 0px; 
+}
+input {
+  margin-top : 100px; 
+  margin-bottom : 20px; 
+  width: 70vw;
+  padding-left: 15px;
+  height: 50px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 30px;
+  transition: 0.5s ease all;
+  animation: animation 1s ease;
+}
+button {
+  height: 30px;
+  border: none;
+  font-size: 18px;
+  background: rgb(0, 180, 81);
+  width: 100px;
+  border-radius: 15px;
+  color: white;
+  animation: animationBTN 2.5s ease ;
+  cursor: pointer;
+}
+button:focus {
+  background: rgb(0, 107, 48);
+}
+svg {
+  position : absolute ; 
+  bottom : 0 ; 
+  left : 0 ; 
+  width: 100vw;
+}
+@media (min-width: 900px) {
+  svg {
+  position : absolute ; 
+  bottom : -200px ; 
+  }
+}
+@keyframes animation {
+    from{
+        width: 0px;
+    }    
+    to{}
+}
+@keyframes animationBTN {
+    from{
+        opacity: 0;
+    }    
+    to{}
+}
