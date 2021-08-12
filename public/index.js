@@ -1,6 +1,6 @@
 let input = document.querySelector("input");
 let btn = document.querySelector("button");
-let cityName = input.value;
+let msg = input.value;
 function clickMe() {
   btn.textContent = "Sent !";
   fetch(`/sendSms`, {
@@ -10,7 +10,7 @@ function clickMe() {
       Accept: "application/json",
     },
     body: JSON.stringify({
-      cityName: input.value,
+      msg: input.value,
     }),
   })
     .then((res) => res.json())
