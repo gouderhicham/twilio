@@ -8,13 +8,13 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.post("/sendSms", (req, res) => {
-  let me = req.body.cityName;
+  let me = req.body.msg;
   if (me !== "") {
     client.messages
       .create({
         body: me,
-        messagingServiceSid: "MG89595688150e4e7d3296cc2ca7b5fe7c",
-        to: "+213672829127",
+        messagingServiceSid: "MG89595688150e4e7d3296cc2ca7b5frokc",
+        to: "+6020304193",
       })
       .then((message) => {
         let msg = message.body;
