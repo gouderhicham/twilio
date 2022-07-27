@@ -1,21 +1,20 @@
+require('dotenv').config();
 const express = require("express");
-const accountSid = process.env.accountSid;
-const authToken = process.env.authToken;
 const app = express();
-const port = process.env.PORT || 5000 ; 
-const client = require("twilio")(accountSid, authToken);
+const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static("public"));
+
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
+
 
 app.post("/sendSms", (req, res) => {
   let me = req.body.msg;
   if (me !== "") {
     client.messages
-      .create({
-        body: me,
-        messagingServiceSid: "MG89595688150e4e7d3296cc2ca7b5frokc",
-        to: "+6020304193",
-      })
+      .create({ body: me, from: "+15139163558", to: "+213672829127" })
       .then((message) => {
         let msg = message.body;
         res.json({ msg });
@@ -26,4 +25,3 @@ app.post("/sendSms", (req, res) => {
 app.listen(port, () => {
   console.log("startd");
 });
-

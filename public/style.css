@@ -1,24 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
 
-body{
+body {
   background: rgb(37, 37, 37);
   color: white;
   display: flex;
   align-items: center;
   overflow-x: hidden;
   flex-direction: column;
-  overflow-y : hidden ; 
+  overflow-y: hidden;
   height: 100vh;
   width: 100vw;
 }
-*{
-  font-family: 'Nunito Sans', sans-serif;
-  padding : 0px ; 
-  margin: 0px; 
+* {
+  font-family: "Nunito Sans", sans-serif;
+  padding: 0px;
+  margin: 0px;
 }
 input {
-  margin-top : 100px; 
-  margin-bottom : 20px; 
+  margin-top: 100px;
+  margin-bottom: 20px;
   width: 70vw;
   padding-left: 15px;
   height: 50px;
@@ -37,33 +37,48 @@ button {
   width: 100px;
   border-radius: 15px;
   color: white;
-  animation: animationBTN 2.5s ease ;
+  transition: ease all 0.3s;
+  animation: animationBTN 2.5s ease;
   cursor: pointer;
 }
 button:focus {
   background: rgb(0, 107, 48);
 }
 svg {
-  position : absolute ; 
-  bottom : 0 ; 
-  left : 0 ; 
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100vw;
 }
 @media (min-width: 900px) {
   svg {
-  position : absolute ; 
-  bottom : -200px ; 
+    position: absolute;
+    bottom: -200px;
   }
 }
 @keyframes animation {
-    from{
-        width: 0px;
-    }    
-    to{}
+  from {
+    width: 0px;
+  }
+  to {
+  }
 }
 @keyframes animationBTN {
-    from{
-        opacity: 0;
-    }    
-    to{}
+  from {
+    opacity: 0;
+  }
+  to {
+  }
+}
+.sent {
+  transition: ease all 0.3s;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  text-align: center;
+  z-index: 12003;
+  font-size: 3rem;
+  font-weight: bold;
 }

@@ -2,7 +2,6 @@ let input = document.querySelector("input");
 let btn = document.querySelector("button");
 let msg = input.value;
 function clickMe() {
-  btn.textContent = "Sent !";
   fetch(`/sendSms`, {
     method: "POST",
     headers: {
@@ -14,6 +13,9 @@ function clickMe() {
     }),
   })
     .then((res) => res.json())
-    .then((res) => console.log(res));
+    .then((res) =>{
+      btn.innerHTML = "Message Sent !"
+      btn.classList.add("sent")
+       console.log(res)});
 }
 btn.addEventListener("click", clickMe);
